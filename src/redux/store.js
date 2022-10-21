@@ -1,5 +1,5 @@
 import { legacy_createStore as createStore } from "redux";
-const { default: counterReducer } = require("./counter/counterReducer");
+import rootReducer from "./rootReducer";
 
 
-export const appStore = createStore(counterReducer)
+export const appStore = createStore(rootReducer)
