@@ -14,7 +14,8 @@ const VariableCounter = ({value,increment,decrement}) => {
     </div>
   )
 }
-const mapStateToProps = (state,ownProps) =>{
+const mapStateToProps = (state,a) =>{
+    console.log(a)
     return{
         value: state.value
     }

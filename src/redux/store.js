@@ -1,4 +1,5 @@
 import { applyMiddleware, legacy_createStore as createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 import logger from "redux-logger";
 import myLogger from "./middleware/myLogger";
 import rootReducer from "./rootReducer";
@@ -12,5 +13,8 @@ import rootReducer from "./rootReducer";
 //     console.log(`upcoming: ${JSON.stringify(upComing)}`)
 //     return next(action)
 // }
-export const appStore = createStore(rootReducer,applyMiddleware(myLogger,logger))
+
+// export const appStore = createStore(rootReducer,applyMiddleware(myLogger,logger))
 // export const appStore = createStore(rootReducer,applyMiddleware(myLogger))
+
+export const appStore = createStore(rootReducer,composeWithDevTools(applyMiddleware(myLogger,logger)))
